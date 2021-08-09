@@ -2,6 +2,8 @@ package com.jhippolyte.currencyconverter.service;
 
 import java.util.List;
 
+import com.jhippolyte.currencyconverter.exception.CurrencyException;
+
 /*
  * The interface Currency Service
  */
@@ -22,7 +24,7 @@ public interface CurrencyService {
 	 * @param amount The amount of money to convert
 	 * @return the money equivalent in the target currency
 	 */
-	public double convertCurrency (String currencySource, String currencyTarget, double amount);
+	public double convertCurrency (String currencySource, String currencyTarget, double amount) throws CurrencyException;
 	
 	
 }
