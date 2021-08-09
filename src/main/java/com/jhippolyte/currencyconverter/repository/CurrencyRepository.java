@@ -13,7 +13,7 @@ public class CurrencyRepository {
 
     private static List<Currency> currencies ; 
     
-    public static void init() {
+    static {
     	currencies = new ArrayList<Currency>();
     	currencies.add(new Currency("US Dollar", "USD", 1.0));
     	currencies.add(new Currency("Euro", "EUR", 0.85073));
@@ -25,7 +25,7 @@ public class CurrencyRepository {
     	currencies.add(new Currency("Swiss Franc", "CHF", 0.91820));
     }
     
-    public static List<Currency> findAllCurrencies() {
+    public List<Currency> findAllCurrencies() {
     	return currencies;
     }
     

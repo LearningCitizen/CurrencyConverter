@@ -3,6 +3,7 @@ package com.jhippolyte.currencyconverter.service;
 import java.util.List;
 
 import com.jhippolyte.currencyconverter.exception.CurrencyException;
+import com.jhippolyte.currencyconverter.model.Currency;
 
 /*
  * The interface Currency Service
@@ -10,12 +11,19 @@ import com.jhippolyte.currencyconverter.exception.CurrencyException;
 public interface CurrencyService {
 	
 	/*
-	 * Get the list of currencies
+	 * Get the list of currencies trigrams
 	 * 
-	 * @return the list of currencies managed
+	 * @return the list of currencies trigrams managed
 	 */
-	public List<String> getCurrenciesList ();
+	public List<String> getCurrenciesTrigramsList ();
 	
+	/*
+	 * Get the currency thanks to its trigram
+	 * 
+	 * @param currencyTrigram the trigram of a currency
+	 * @return the currency associated to the trigram
+	 */
+	public Currency getCurrencyByTrigram(String currencyTrigram)throws CurrencyException;
 	/*
 	 * Convert an amount of money from a currency to another one
 	 * 

@@ -38,5 +38,12 @@ public class Currency {
 	public void setExchangeRate(Double exchangeRate) {
 		this.exchangeRate = exchangeRate;
 	}
+
+	@Override
+	public String toString() {
+		return "Currency [name=" + name + ", trigram=" + trigram + "]";
+	}
+	
+	
 	
 }
