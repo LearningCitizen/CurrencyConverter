@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Component;
+
 import com.jhippolyte.currencyconverter.model.Currency;
 
+@Component
 public class CurrencyRepository {
 
     private static List<Currency> currencies ; 
