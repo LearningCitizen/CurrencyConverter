@@ -28,6 +28,10 @@ public class CurrencyController {
 		return ResponseEntity.ok(currencyService.getCurrenciesTrigramsList());
 	}
 	
+	/*
+	 * TODO change param
+	 */
+	@GetMapping("/currencyByTrigram")
 	public ResponseEntity getCurrencyByTrigram(String currencyTrigram){
 		ResponseEntity re = null;
 		try {
