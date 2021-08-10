@@ -22,12 +22,11 @@ public class CurrencyServiceImpl implements CurrencyService {
 	private static Logger logger = LoggerFactory.getLogger(CurrencyServiceImpl.class);
 
 	@Override
-	public List<String> getCurrenciesTrigramsList() {
+	public List<Currency> getCurrenciesTrigramsList() {
 		logger.info("Getting list of currencies");
 		logger.info("currencyRepository : "+currencyRepository);
 		logger.info("currencyRepository.findAllCurrencies() : "+currencyRepository.findAllCurrencies());
-		return currencyRepository.findAllCurrencies()
-				.stream().map(cur -> cur.toString()).collect(Collectors.toList());
+		return currencyRepository.findAllCurrencies();
 	}
 	
 	public Currency getCurrencyByTrigram(String currencyTrigram) throws CurrencyException {

@@ -1,5 +1,8 @@
 package com.jhippolyte.currencyconverter.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(value = JsonInclude.Include.NON_NULL)
 public class Currency {
 
 	String name;
@@ -39,11 +42,10 @@ public class Currency {
 		this.exchangeRate = exchangeRate;
 	}
 
-	@Override
-	public String toString() {
-		return "Currency [name=" + name + ", trigram=" + trigram + "]";
-	}
-	
+	//@Override
+	//public String toString() {
+	//	return "Currency [name=" + name + ", trigram=" + trigram + "]";
+	//}
 	
 	
 }
