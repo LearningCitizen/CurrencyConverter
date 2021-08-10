@@ -22,7 +22,7 @@ public class CurrencyServiceImpl implements CurrencyService {
 	private static Logger logger = LoggerFactory.getLogger(CurrencyServiceImpl.class);
 
 	@Override
-	public List<Currency> getCurrenciesTrigramsList() {
+	public List<Currency> getCurrenciesList() {
 		logger.info("Getting list of currencies");
 		logger.info("currencyRepository : "+currencyRepository);
 		logger.info("currencyRepository.findAllCurrencies() : "+currencyRepository.findAllCurrencies());
@@ -44,7 +44,7 @@ public class CurrencyServiceImpl implements CurrencyService {
 		logger.info("trying target currency");
 		Currency currTarget = getCurrencyByTrigram(currencyTrigramTarget);
 		logger.info("converting in the target currency");
-		return (currSource.getExchangeRate()*amount)/currTarget.getExchangeRate();
+		return (currTarget.getExchangeRate()*amount)/currSource.getExchangeRate();
 	}
 	
 	

@@ -15,7 +15,7 @@ public interface CurrencyService {
 	 * 
 	 * @return the list of currencies trigrams managed
 	 */
-	public List<Currency> getCurrenciesTrigramsList ();
+	public List<Currency> getCurrenciesList();
 	
 	/*
 	 * Get the currency thanks to its trigram
