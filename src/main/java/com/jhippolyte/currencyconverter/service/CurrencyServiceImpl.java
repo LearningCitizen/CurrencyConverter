@@ -27,13 +27,13 @@ public class CurrencyServiceImpl implements CurrencyService {
 		logger.info("currencyRepository : "+currencyRepository);
 		logger.info("currencyRepository.findAllCurrencies() : "+currencyRepository.findAllCurrencies());
 		return currencyRepository.findAllCurrencies()
-				.stream().map(cur -> cur.toString()).toList();
+				.stream().map(cur -> cur.toString()).collect(Collectors.toList());
 	}
 	
 	public Currency getCurrencyByTrigram(String currencyTrigram) throws CurrencyException {
 		logger.info("trying getting currency : "+currencyTrigram);
 		Optional<Currency> currOpt = currencyRepository.findCurrencyByTrigram(currencyTrigram);
-		if (currOpt.isEmpty())
+		if (!currOpt.isPresent())
 			throw new CurrencyException("The Currency "+currOpt+" does not exist in our database");
 		return currOpt.get();
 	}

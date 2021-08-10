@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jhippolyte.currencyconverter.exception.CurrencyException;
@@ -23,20 +24,26 @@ public class CurrencyController {
 	@Autowired
 	CurrencyService currencyService;
 	
+	/*
+	 * Get all the trigrams of currencies
+	 * 
+	 */
 	@GetMapping("/currenciesTrigrams")
 	public ResponseEntity<List<String>> getAllCurrenciesTrigrams() {
 		return ResponseEntity.ok(currencyService.getCurrenciesTrigramsList());
 	}
 	
 	/*
-	 * TODO change param
+	 * Get the currency associated to the given trigram.
+	 * 
+	 * @param trigram A trigram associated to a currency.
 	 */
 	@GetMapping("/currencyByTrigram")
-	public ResponseEntity getCurrencyByTrigram(String currencyTrigram){
+	public ResponseEntity getCurrencyByTrigram(@RequestParam String trigram){
 		ResponseEntity re = null;
 		try {
 			logger.info("Trying to get Currency by trigram");
-			Currency curr = currencyService.getCurrencyByTrigram(currencyTrigram);
+			Currency curr = currencyService.getCurrencyByTrigram(trigram);
 			re = ResponseEntity.ok(curr);
 		} catch (CurrencyException e) {
 			logger.error(e.getMessage());
