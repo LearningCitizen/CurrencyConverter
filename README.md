@@ -9,7 +9,7 @@ You can clone the project on [github](https://github.com/LearningCitizen/Currenc
 
 ```bash
 git clone https://github.com/LearningCitizen/CurrencyConverter
-cd CurrencyConverter
+cd currency-converter
 mvn clean install
 java -jar /target/currency-converter.jar
 ```
