@@ -1,6 +1,8 @@
 package com.jhippolyte.currencyconverter.controller.v1.api;
 
 import com.jhippolyte.currencyconverter.util.JsonUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import com.jhippolyte.currencyconverter.exception.CurrencyException;
 import com.jhippolyte.currencyconverter.model.Currency;
 import com.jhippolyte.currencyconverter.service.CurrencyService;
 
+@Api(value = "currency-converter-api")
 @RestController
 @RequestMapping("/api/v1/currencies")
 public class CurrencyController {
@@ -27,6 +30,7 @@ public class CurrencyController {
      * Get all the trigrams of currencies
      *
      */
+    @ApiOperation(value = "getAllCurrencies")
     @GetMapping
     public ResponseEntity<String> getAllCurrencies() {
         return ResponseEntity.ok(JsonUtils.toJson(currencyService.getCurrenciesList()));
@@ -37,6 +41,7 @@ public class CurrencyController {
      *
      * @param trigram A trigram associated to a currency.
      */
+    @ApiOperation(value = "getCurrencyByTrigram")
     @GetMapping("/currency")
     public ResponseEntity getCurrencyByTrigram(@RequestParam String trigram) {
         ResponseEntity re = null;
@@ -57,6 +62,7 @@ public class CurrencyController {
      *
      * @param trigram A trigram associated to a currency.
      */
+    @ApiOperation(value = "getCurrencyByTrigram")
     @GetMapping("/conversion")
     public ResponseEntity getCurrencyByTrigram(@RequestParam String source, @RequestParam String target, @RequestParam Double amount) {
         ResponseEntity re = null;
