@@ -62,9 +62,9 @@ public class CurrencyController {
      *
      * @param trigram A trigram associated to a currency.
      */
-    @ApiOperation(value = "getCurrencyByTrigram")
+    @ApiOperation(value = "convertCurrency")
     @GetMapping("/conversion")
-    public ResponseEntity getCurrencyByTrigram(@RequestParam String source, @RequestParam String target, @RequestParam Double amount) {
+    public ResponseEntity convertCurrency(@RequestParam String source, @RequestParam String target, @RequestParam Double amount) {
         ResponseEntity re = null;
         try {
             logger.info("Trying to convert the amount into the target currency");
