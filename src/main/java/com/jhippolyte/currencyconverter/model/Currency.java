@@ -1,51 +1,48 @@
 package com.jhippolyte.currencyconverter.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import javax.validation.constraints.*;
 
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
 public class Currency {
 
-	String name;
-	
-	String trigram;
-	
-	Double exchangeRate;
+    @NotEmpty
+    String name;
 
-	public Currency(String name, String trigram, Double exchangeRate) {
-		super();
-		this.name = name;
-		this.trigram = trigram;
-		this.exchangeRate = exchangeRate;
-	}
+    @Size(min = 3, max = 3, message = "The trigram should becomposed of 3 characters")
+    String trigram;
 
-	public String getName() {
-		return name;
-	}
+    @Positive
+    Double exchangeRate;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Currency(String name, String trigram, Double exchangeRate) {
+        super();
+        this.name = name;
+        this.trigram = trigram;
+        this.exchangeRate = exchangeRate;
+    }
 
-	public String getTrigram() {
-		return trigram;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setTrigram(String trigram) {
-		this.trigram = trigram;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Double getExchangeRate() {
-		return exchangeRate;
-	}
+    public String getTrigram() {
+        return trigram;
+    }
 
-	public void setExchangeRate(Double exchangeRate) {
-		this.exchangeRate = exchangeRate;
-	}
+    public void setTrigram(String trigram) {
+        this.trigram = trigram;
+    }
 
-	//@Override
-	//public String toString() {
-	//	return "Currency [name=" + name + ", trigram=" + trigram + "]";
-	//}
-	
-	
+    public Double getExchangeRate() {
+        return exchangeRate;
+    }
+
+    public void setExchangeRate(Double exchangeRate) {
+        this.exchangeRate = exchangeRate;
+    }
 }
