@@ -45,4 +45,19 @@ public class Currency {
     public void setExchangeRate(Double exchangeRate) {
         this.exchangeRate = exchangeRate;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Currency currency = (Currency) o;
+
+        return trigram != null ? trigram.equals(currency.trigram) : currency.trigram == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return trigram != null ? trigram.hashCode() : 0;
+    }
 }
