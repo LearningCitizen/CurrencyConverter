@@ -30,7 +30,7 @@ public class CurrencyRepository {
     }
     
     public Optional<Currency> findCurrencyByTrigram (String trigram) {
-    	return Optional.of(currencies.stream().filter(cur -> cur.getTrigram().equals(trigram))
+    	return Optional.of(currencies.stream().filter(cur -> cur.getTrigram().equalsIgnoreCase(trigram))
     			.findFirst().orElse(null));
     }
 }
