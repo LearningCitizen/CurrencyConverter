@@ -1,6 +1,10 @@
 package com.jhippolyte.currencyconverter.service;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -46,7 +50,5 @@ public class CurrencyServiceImpl implements CurrencyService {
 		logger.info("converting in the target currency");
 		return (currTarget.getExchangeRate()*amount)/currSource.getExchangeRate();
 	}
-	
-	
 
 }
