@@ -1,2 +1,3 @@
 <select [name]="name" [size]="size()">
+    <option *ngFor="let item of currencies" [value]="item.name">{{ item.name }}</option>
 </select>
