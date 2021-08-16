@@ -18,8 +18,12 @@ export class SelectComponent implements OnInit {
   constructor(private currencyService: CurrencyService) { }
 
   ngOnInit(): void {
-    this.currencyService.getCurrenciesList().subscribe((curr) => {this.currencies = curr;console.log(`currs : ${this.currencies} curr: ${curr}`)});
-
+    this.currencyService.getCurrenciesList().subscribe((curr) => 
+    {
+      this.currencies = curr;
+      this.value=this.currencies[0].trigram;
+      this.emitValue();
+    });
   }
 
   emitValue(){
