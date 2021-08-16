@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CurrencyService } from '../../services/currency.service';
 import { Currency } from '../../model/currency';
 
@@ -10,6 +10,8 @@ import { Currency } from '../../model/currency';
 export class SelectComponent implements OnInit {
 
   @Input() name: string = "select";
+  value: string = "value";
+  @Output() valueEmitter: EventEmitter<string> = new EventEmitter<string>();
   currencies : Currency[] = [];
   cur : any;
 
@@ -20,8 +22,8 @@ export class SelectComponent implements OnInit {
 
   }
 
-  size(){
-    return 0;
+  emitValue(){
+    this.valueEmitter.emit(this.value);
   }
 
 }
