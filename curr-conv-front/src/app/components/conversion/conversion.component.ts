@@ -9,7 +9,7 @@ export class ConversionComponent implements OnInit {
 
   currencySource: string = "";
   currencyTarget: string = "";
-  amount: number = 0;
+  amount: number = 1;
 
   constructor() { }
 
