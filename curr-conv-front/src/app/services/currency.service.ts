@@ -11,7 +11,9 @@ export class CurrencyService {
 
   private rootUrl:string = 'http://localhost:8080';
   private currenciesUri:string = '/api/v1/currencies';
-  private conversionUri:string = '/api/v1/currencies/conversion'
+  private conversionUri:string = '/api/v1/currencies/conversion';
+  private result:number = 0;
+  private displayResult : boolean = false;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -19,7 +21,16 @@ export class CurrencyService {
     return this.httpClient.get<Currency[]>(this.rootUrl + this.currenciesUri);
   }
 
-  convertCurrency(): Observable<Number> {
-    return this.httpClient.get<Number>(`${this.rootUrl}${this.conversionUri}`);
+  convertCurrency(currencySource:string, currencyTarget:string, amount:number): Observable<number> {
+    return this.httpClient.get<number>(`${this.rootUrl}${this.conversionUri}`, {
+      params: {
+        amount: amount,
+        source: currencySource,
+        target: currencyTarget
+      }});
+  }
+
+  clear(){
+
   }
 }
