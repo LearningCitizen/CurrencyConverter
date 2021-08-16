@@ -7,6 +7,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SelectComponent } from './components/select/select.component';
 import { InputComponent } from './components/input/input.component';
+import { ConversionComponent } from './components/conversion/conversion.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { InputComponent } from './components/input/input.component';
     ButtonComponent,
     HeaderComponent,
     SelectComponent,
-    InputComponent
+    InputComponent,
+    ConversionComponent
   ],
   imports: [
     BrowserModule,

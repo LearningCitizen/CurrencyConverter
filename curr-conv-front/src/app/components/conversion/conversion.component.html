@@ -1,0 +1,4 @@
+<app-input (valueEmitter)="getAmount($event)"></app-input>
+<app-select name="From" (valueEmitter)="getCurrencySource($event)" ></app-select>
+<app-select name="To" (valueEmitter)="getCurrencyTarget($event)"></app-select>
+<app-button text="convert" (btnClick)="convertCurrency()"></app-button>
