@@ -10,7 +10,6 @@ import { SelectComponent } from './components/select/select.component';
 import { InputComponent } from './components/input/input.component';
 import { ConversionComponent } from './components/conversion/conversion.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DescriptionComponent } from './component/description/description.component';
 import { CurrenciesComponent } from './components/currencies/currencies.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { CurrenciesComponent } from './components/currencies/currencies.componen
     SelectComponent,
     InputComponent,
     ConversionComponent,
-    DescriptionComponent,
     CurrenciesComponent
   ],
   imports: [
