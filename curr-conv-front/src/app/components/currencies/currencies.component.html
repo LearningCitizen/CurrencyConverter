@@ -1,1 +1,18 @@
-<>>
+<header>Currencies description</header>
+
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Trigram</th>
+            <th scope="col">Name</th>
+            <th scope="col">Exhange rate (USD)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cur of currencies">
+            <th scope="row">{{ cur }}</th>
+            <td>{{ cur.name }}</td>
+            <td>{{ cur.exchangeRate }}</td>
+        </tr>
+    </tbody>
+</table>
