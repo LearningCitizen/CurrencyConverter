@@ -1,4 +1,6 @@
-<header>Currencies description</header>
+<header>
+    <h3>Currencies description</h3>
+</header>
 
 <table class="table">
     <thead class="table-dark">
@@ -10,7 +12,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let cur of currencies">
-            <th scope="row">{{ cur }}</th>
+            <th scope="row">{{ cur.trigram }}</th>
             <td>{{ cur.name }}</td>
             <td>{{ cur.exchangeRate }}</td>
         </tr>
