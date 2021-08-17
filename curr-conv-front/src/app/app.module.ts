@@ -11,6 +11,7 @@ import { InputComponent } from './components/input/input.component';
 import { ConversionComponent } from './components/conversion/conversion.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DescriptionComponent } from './component/description/description.component';
+import { CurrenciesComponent } from './components/currencies/currencies.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DescriptionComponent } from './component/description/description.compon
     SelectComponent,
     InputComponent,
     ConversionComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    CurrenciesComponent
   ],
   imports: [
     BrowserModule,
