@@ -8,6 +8,7 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.jhippolyte.currencyconverter.util.CurrencyUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +49,7 @@ public class CurrencyServiceImpl implements CurrencyService {
 		logger.info("trying target currency");
 		Currency currTarget = getCurrencyByTrigram(currencyTrigramTarget);
 		logger.info("converting in the target currency");
-		return (currTarget.getExchangeRate()*amount)/currSource.getExchangeRate();
+		return CurrencyUtils.round((currTarget.getExchangeRate()*amount)/currSource.getExchangeRate(),2);
 	}
 
 }
