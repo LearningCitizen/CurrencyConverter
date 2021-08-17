@@ -1,11 +1,13 @@
-<!-- <header>
-    <h1>{{ title }}</h1>
-</header> -->
-<!-- As a link -->
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid justify-content-center">
         <a class="navbar-brand" href="#">
             <h1>{{ title }}</h1>
         </a>
+        <span *ngFor="let link of links"> 
+            <a *ngIf="isActive(link); else elseBlock" class="nav-link active" [routerLink]="link" aria-current="page">{{ link.substr(1) }}</a>
+            <ng-template #elseBlock>
+                <a class="nav-link" [routerLink]="link">{{ link.substr(1) }}</a>
+            </ng-template>
+        </span>
     </div>
 </nav>

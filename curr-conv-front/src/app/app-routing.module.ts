@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { ConversionComponent } from './components/conversion/conversion.component';
 import { CurrenciesComponent } from './components/currencies/currencies.component';
 
@@ -16,4 +16,17 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+
+  constructor(private router: Router){}
+
+  isActive(link: string): boolean {
+    console.log(link+' res : '+this.router.url)
+    return this.router.url === link;
+  }
+
+  getPaths(): string[]{
+    return routes.map(route => `/${route.path}`);
+  }
+
+}
