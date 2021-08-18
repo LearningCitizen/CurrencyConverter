@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.links = this.appRouting.getPaths().filter(path => path!=='/');
-    console.log("paths : "+this.links)
   }
 
   isActive(link :string) :boolean {
