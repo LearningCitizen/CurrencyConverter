@@ -1,12 +1,10 @@
-<div class="top-50 start-50">
-    <form>
-        <app-input (valueEmitter)="getAmount($event)" name="amount"></app-input>
-        <app-select name="From" (valueEmitter)="getCurrencySource($event)"></app-select>
-        <app-select name="To" (valueEmitter)="getCurrencyTarget($event)"></app-select>
-        <app-button text="convert" (btnClick)="convertCurrency()"></app-button>
-        <div>
-            <h3 [hidden]="displayResult"><span class="badge bg-dark text-end">{{ result }} {{ currencyTarget |
-                    uppercase }}</span></h3>
-        </div>
-    </form>
-</div>
+<form>
+    <app-input (valueEmitter)="getAmount($event)" name="amount"></app-input>
+    <app-select name="From" (valueEmitter)="getCurrencySource($event)"></app-select>
+    <app-select name="To" (valueEmitter)="getCurrencyTarget($event)"></app-select>
+    <app-button text="convert" (btnClick)="convertCurrency()"></app-button>
+    <div>
+        <h3 [hidden]="displayResult"><span class="badge bg-dark text-end">{{ result }} {{ currencyTarget |
+                uppercase }}</span></h3>
+    </div>
+</form>
