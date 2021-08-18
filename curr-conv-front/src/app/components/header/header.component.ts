@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
 
   @Input() title: string = "Currency Application";
   links : string[] = [];
-  linksName : string[] = [];
 
   constructor(private appRouting : AppRoutingModule) { }
 
