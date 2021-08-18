@@ -30,4 +30,8 @@ export class SelectComponent implements OnInit {
     this.valueEmitter.emit(this.value);
   }
 
+  getId(): string {
+    return `select-${this.name}`;
+  }
+
 }

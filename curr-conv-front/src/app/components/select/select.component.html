@@ -1,3 +1,6 @@
-<select class="form-select" [name]="name" [(ngModel)]="value" (change)="emitValue()">
-    <option *ngFor="let item of currencies" [value]="item.trigram">{{ item.trigram }}</option>
-</select>
+<div class="form-floating">
+    <select class="form-select" [name]="name" [(ngModel)]="value" (change)="emitValue()">
+        <option *ngFor="let currency of currencies" [value]="currency.trigram">{{ currency.trigram }}</option>
+    </select>
+    <label [for]="getId()">{{ name }}</label>
+</div>
