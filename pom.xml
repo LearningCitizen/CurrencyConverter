@@ -14,7 +14,8 @@
     <description>Currency converter project</description>
     <properties>
         <java.version>1.8</java.version>
-        <front-end-files>curr-conv-front/dist/curr-conv-front</front-end-files>
+        <frontend.files>curr-conv-front/dist/curr-conv-front</frontend.files>
+        <url.https>https://github.com/LearningCitizen/CurrencyConverter</url.https>
     </properties>
     <dependencies>
         <dependency>
@@ -73,17 +74,17 @@
 
     <build>
         <plugins>
-            <plugin> 
-                <artifactId>maven-clean-plugin</artifactId> 
-                <version>3.1.0</version> 
-                <configuration> 
-                    <filesets> 
-                        <fileset> 
-                            <directory>dist</directory> 
-                        </fileset> 
-                    </filesets> 
-                </configuration> 
-            </plugin> 
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>dist</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -120,12 +121,14 @@
                     <execution>
                         <id>copy-resources</id>
                         <phase>validate</phase>
-                        <goals><goal>copy-resources</goal></goals>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
                         <configuration>
-                            <outputDirectory>${build.directory}/classes/static</outputDirectory >
+                            <outputDirectory>${build.directory}/classes/static</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${front-end-files}</directory>
+                                    <directory>${frontend.files}</directory>
                                 </resource>
                             </resources>
                         </configuration>
@@ -149,6 +152,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <scm>
+        <connection>scm:git:${url.https}</connection>
+        <developerConnection>scm:git:${url.https}</developerConnection>
+        <url>${url.https}</url>
+    </scm>
 
     <pluginRepositories>
         <pluginRepository>
