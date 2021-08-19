@@ -9,7 +9,7 @@ The frontend is made with Angular 12 and the backend is made with Java and Sprin
 To build the project you need to install :  
 - [java 8](https://www.oracle.com/fr/java/technologies/javase/javase-jdk8-downloads.html)  
 - [nodejs](https://nodejs.org/en/download/)  
-- [angular cli](https://nodejs.org/en/download/) 
+- [angular cli](https://angular.io/guide/setup-local#install-the-angular-cli) 
 
  ### Building and Running
 
@@ -19,6 +19,7 @@ cd currency-converter
 mvn clean install
 java -jar target/currency-converter-0.0.2-SNAPSHOT.jar
 ```
+The application interface runs on http://localhost:8080/
 
 ## APIs
 
