@@ -1,5 +1,7 @@
 # Currency Converter
 
+![](./resources/currencyconverter_picture.gif)  
+  
 Currency Converter is a project that allows you to get infos on currencies and do conversion.  
 The frontend is made with Angular 12 and the backend is made with Java and Spring boot.  
 
