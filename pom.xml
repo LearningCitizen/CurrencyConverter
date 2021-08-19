@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.jhippolyte</groupId>
     <artifactId>currency-converter</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>currency-converter</name>
     <description>Currency converter project</description>
     <properties>
@@ -157,7 +157,8 @@
         <connection>scm:git:${url.https}</connection>
         <developerConnection>scm:git:${url.https}</developerConnection>
         <url>${url.https}</url>
-    </scm>
+      <tag>currency-converter-0.0.1</tag>
+  </scm>
 
     <pluginRepositories>
         <pluginRepository>
